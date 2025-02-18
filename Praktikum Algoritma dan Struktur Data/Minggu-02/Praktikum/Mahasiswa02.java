@@ -1,11 +1,22 @@
-class Mahasiswa{
+class Mahasiswa02{
     String nim;
     String nama;
     String kelas;
     double ipk;
 
+    Mahasiswa02(){
+
+    }
+
+    Mahasiswa02(String nm, String nim, double ipk, String kls){
+        nama = nm;
+        this.nim = nim;
+        this.ipk = ipk;
+        kelas = kls;
+    }
+
     void tampilInformasi(){
-        System.out.printf("NIM: %s %nNama: %s %nKelas: %s %nIPK: %.1f %n", nim,nama,kelas,ipk);
+        System.out.printf("NIM: %s %nNama: %s %nKelas: %s %nIPK: %.2f %n", nim,nama,kelas,ipk);
     }
 
     void ubahKelas(String kelasBaru){

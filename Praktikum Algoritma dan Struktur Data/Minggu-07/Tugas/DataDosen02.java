@@ -42,6 +42,7 @@ public class DataDosen02 {
         }
         if(found != false && jum == 1){
             System.out.printf("Dosen dengan nama %s ditemukan pada indeks %s%n", nma, idx);
+            System.out.printf("Kode\t: %s%nNama\t: %s %nUsia\t: %s %nJenis Kelamin\t: %s %n",dataDosen[idx].kode, dataDosen[idx].nama, dataDosen[idx].usia, dataDosen[idx].jenisKelamin);
         }else if(jum > 1){
             System.out.printf("Peringatan!!! Ada %s dosen yang memiliki nama %s %n",jum, nma);
         }else{
@@ -76,22 +77,22 @@ public class DataDosen02 {
             int l = mid - 1;
             int r = mid + 1;
     
-            while (l > left && dataDosen[l].usia == cariUmur) {
+            while (l >= 0 && dataDosen[l].usia == cariUmur) {
                 jum++;
                 l--;
             }
     
-            while (r < right && dataDosen[r].usia == cariUmur) {
+            while (r < dataDosen.length && dataDosen[r].usia == cariUmur) {
                 jum++;
                 r++;
             }
     
             // Combine
-            if (jum == 1) {
+            if (jum > 1) {
+                System.out.printf("Peringatan!!! ada %d dosen yang memiliki umur %d %n", jum, cariUmur);
+            } else {
                 System.out.printf("Data dosen dengan umur %d ditemukan pada indeks %d %n", cariUmur, mid);
                 System.out.printf("Kode\t: %s%nNama\t: %s %nUsia\t: %s %nJenis Kelamin\t: %s %n",dataDosen[mid].kode, dataDosen[mid].nama, dataDosen[mid].usia, dataDosen[mid].jenisKelamin);
-            } else {
-                System.out.printf("Peringatan!!! ada %d dosen yang memiliki umur %d %n", jum, cariUmur);
             }
             return;
         } else if (dataDosen[mid].usia < cariUmur) {

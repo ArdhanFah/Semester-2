@@ -1,0 +1,10 @@
+package src.tugas;
+public class Node02 {
+    Mahasiswa02 data;
+    Node02 next;
+
+    public Node02(Mahasiswa02 data){
+        this.data = data;
+        this.next = null;
+    }
+}

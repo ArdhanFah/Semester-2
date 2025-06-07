@@ -1,0 +1,7 @@
+#!/bin/bash
+javac -d bin src/Percobaan/*.java
+if [ $? -ne 0 ]; then
+  echo "Compilation failed."
+  exit 1
+fi
+java -cp bin src.Percobaan.DoubleLinkedListMain02

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+javac -d bin Praktikum/Book/*.java \
+    Praktikum/Customer/*.java \
+    Praktikum/*.java
+
+if [[ $? -ne 0 ]]; then
+    echo "Compilation failed."
+    exit 1
+fi
+
+echo "Compilation successful."
+echo "Pilih program yang ingin dijalankan:"
+echo "1. Main ArrayList"
+echo "2. Main Stack"
+echo "3, Main TreeSet"
+echo -n "Masukkan pilihan (1-3): "
+read choice
+
+case $choice in
+    1)
+        echo "Menjalankan DemoArrayList..."
+        java -cp bin Praktikum.DemoArrayList
+        ;;
+    2)
+        echo "Menjalankan StackDemo..."
+        java -cp bin Praktikum.StackDemo
+        ;;
+    3)
+    echo "Menjalankan DemoTreeSet..."
+        java -cp bin Praktikum.TreeSetDemo
+        ;;
+    *)
+        echo "Pilihan tidak valid"
+        exit 1
+        ;;
+esac
